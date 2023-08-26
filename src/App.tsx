@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from './component/layout/Header';
+import Home from './component/pages/Home';
+import Footer from './component/layout/Footer';
 
 function App() {
   return (
     <div className="">
-      <h1>development branch</h1>
+      <Header headerName='faraz' />
+      <Home />
+      <Footer />
     </div>
   );
 }
