@@ -1,10 +1,11 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { Container } from "@mui/material";
+import { Box, Container, Toolbar, Typography } from '@mui/material';
 
-const Home = () => {
+interface HomeProps{
+  
+}
+
+const Home: React.FC<HomeProps> = () => {
   return (
     <Container maxWidth="lg">
       <Box component="main" sx={{ p: 3 }}>
