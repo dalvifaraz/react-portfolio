@@ -1,13 +1,15 @@
 import React from "react";
-import Header from "./component/layout/Header";
-import Home from "./component/pages/Home";
-import Footer from "./component/layout/Footer";
+import { Header, Footer } from "./component/layout";
+import { Home, About, Blog, Contact} from "./component/pages";
 
 function App() {
   return (
     <div className="">
       <Header headerName="Header" />
       <Home />
+      <About />
+      <Blog />
+      <Contact />
       <Footer footerName="Footer" />
     </div>
   );
