@@ -9,6 +9,7 @@ const Blog: React.FC<BlogProps> = () => {
     <Container maxWidth="lg">
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
+        <Typography>Blog</Typography>
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
           unde fugit veniam eius, perspiciatis sunt? Corporis qui ducimus

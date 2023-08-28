@@ -10,6 +10,7 @@ const About: React.FC<AboutProps> = () => {
     <Container maxWidth="lg">
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
+        <Typography>ABOUT</Typography>
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
           unde fugit veniam eius, perspiciatis sunt? Corporis qui ducimus

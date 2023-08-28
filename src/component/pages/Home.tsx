@@ -10,6 +10,7 @@ const Home: React.FC<HomeProps> = () => {
     <Container maxWidth="lg">
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
+        <Typography>Home</Typography>
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
           unde fugit veniam eius, perspiciatis sunt? Corporis qui ducimus
