@@ -16,9 +16,31 @@ import Button from "@mui/material/Button";
 import { Container, Fade, Slide, useScrollTrigger } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { NavLink, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Blog", "About", "Contact"];
+const navItems = [
+  {
+    key: 1,
+    name: "Home",
+    path: "/",
+  },
+  {
+    key: 2,
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    key: 3,
+    name: "About",
+    path: "/about",
+  },
+  {
+    key: 4,
+    name: "Contact",
+    path: "/contact",
+  },
+];
 
 interface HeaderProps {
   headerName: string;
@@ -30,9 +52,6 @@ interface Props {
 
 function HideOnScroll(props: Props) {
   const { children } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     target: undefined,
   });
@@ -87,14 +106,21 @@ const Header: React.FC<HeaderProps> = ({ headerName }) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Faraz Dalvi
+        <NavLink style={{ textDecoration: "none", color: "grey" }} to="/">
+          Faraz Dalvi
+        </NavLink>
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.key} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <NavLink
+                style={{ textDecoration: "none", color: "grey" }}
+                to={item.path}
+              >
+                <ListItemText primary={item.name} />
+              </NavLink>
             </ListItemButton>
           </ListItem>
         ))}
@@ -124,13 +150,22 @@ const Header: React.FC<HeaderProps> = ({ headerName }) => {
                   component="div"
                   sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
                 >
-                  Faraz Dalvi
+                  <NavLink
+                    style={{ textDecoration: "none", color: "#FFF" }}
+                    to="/"
+                  >
+                    Faraz Dalvi
+                  </NavLink>
                 </Typography>
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   {navItems.map((item) => (
-                    <Button key={item} sx={{ color: "#fff" }}>
-                      {item}
-                    </Button>
+                    <NavLink
+                      style={{ textDecoration: "none", color: "#FFF" }}
+                      key={item.key}
+                      to={item.path}
+                    >
+                      <Button sx={{ color: "#fff" }}>{item.name}</Button>
+                    </NavLink>
                   ))}
                 </Box>
               </Container>
@@ -162,6 +197,7 @@ const Header: React.FC<HeaderProps> = ({ headerName }) => {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
+      <Outlet />
     </React.Fragment>
   );
 };
