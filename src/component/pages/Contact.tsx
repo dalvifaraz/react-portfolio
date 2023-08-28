@@ -8,6 +8,7 @@ const Contact: React.FC<ContactProps> = () => {
     <Container maxWidth="lg">
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
+        <Typography>Contact</Typography>
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
           unde fugit veniam eius, perspiciatis sunt? Corporis qui ducimus
