@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* navlink */
+.nav-link {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+  margin: 0px 0.3rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Common Border for testing */
+.border{
+  border: 1px solid black;
+}

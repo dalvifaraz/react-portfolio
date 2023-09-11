@@ -27,16 +27,21 @@ const navItems = [
   },
   {
     key: 2,
-    name: "Blog",
-    path: "/blog",
-  },
-  {
-    key: 3,
     name: "About",
     path: "/about",
   },
   {
+    key: 3,
+    name: "Work",
+    path: "/work",
+  },
+  {
     key: 4,
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    key: 5,
     name: "Contact",
     path: "/contact",
   },
@@ -107,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ headerName }) => {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         <NavLink style={{ textDecoration: "none", color: "grey" }} to="/">
-          Faraz Dalvi
+          My Portfolio
         </NavLink>
       </Typography>
       <Divider />
@@ -148,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ headerName }) => {
                 <Typography
                   variant="h6"
                   component="div"
-                  sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+                  sx={{ flexGrow: 1, display: { xs: "flex", sm: "block" }, justifyContent: { xs: 'center'} }}
                 >
                   <NavLink
                     style={{ textDecoration: "none", color: "#FFF" }}
@@ -159,11 +164,7 @@ const Header: React.FC<HeaderProps> = ({ headerName }) => {
                 </Typography>
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   {navItems.map((item) => (
-                    <NavLink
-                      style={{ textDecoration: "none", color: "#FFF" }}
-                      key={item.key}
-                      to={item.path}
-                    >
+                    <NavLink className="nav-link" key={item.key} to={item.path}>
                       <Button sx={{ color: "#fff" }}>{item.name}</Button>
                     </NavLink>
                   ))}
